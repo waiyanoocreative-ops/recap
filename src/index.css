@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", "Noto Sans Myanmar", "Padauk", Inter, system-ui, sans-serif;
+  --font-sans: "Noto Sans Myanmar", "Padauk", "DM Sans", Inter, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Obsidian Dark SaaS Studio tokens */
+  --color-canvas: #0B0F19;
+  --color-surface: #131A2A;
+  --color-well: #0E1422;
+  --color-line: rgba(148, 163, 184, 0.14);
+  --color-line-strong: rgba(148, 163, 184, 0.18);
+  --color-accent: #06B6D4;
+  --color-accent-bright: #22D3EE;
+  --color-success: #10B981;
+  --color-voice-male: #38BDF8;
+  --color-voice-female: #F472B6;
+}
+
+@layer base {
+  html,
+  body,
+  main {
+    font-family: var(--font-sans);
+    background-color: #0B0F19;
+    color: #f1f5f9;
+    line-height: 1.75;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  textarea,
+  input,
+  select {
+    font-family: var(--font-sans);
+    line-height: 1.75;
+  }
+
+  /* Myanmar script breathes better with extra leading */
+  :lang(my),
+  [lang="my"],
+  .font-sans {
+    font-feature-settings: "locl" 1;
+  }
+
+  ::selection {
+    background-color: rgba(6, 182, 212, 0.28);
+  }
+
+  /* Slim dark scrollbars for the studio chrome */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.22) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 163, 184, 0.22);
+    border-radius: 9999px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(148, 163, 184, 0.35);
+  }
+  *::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+/* Card surface token: #131A2A + 1px slate border + rounded-xl */
+.studio-card {
+  background-color: #131A2A;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 0.75rem;
+}
+
+/* Nested input/track well token: #0E1422 + stronger slate border */
+.studio-well {
+  background-color: #0E1422;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 0.625rem;
+}
+
+/* Electric cyan glow used by active CTAs, steppers and stage elements */
+.studio-glow {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.18);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

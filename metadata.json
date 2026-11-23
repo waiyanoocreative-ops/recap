@@ -1,0 +1,6 @@
+{
+  "name": "Kinetix Localization Studio",
+  "description": "Long-form video recap and dubbing workbench for Burmese (my-MM) and English (en-US) localization with server-side FFmpeg processing and timing sync.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
